@@ -29,13 +29,13 @@ export default function FirstPost() {
 					console.log(`script loaded correctly, window.FB has been populated`)
 				}
 			/> */}
-				<h1>First Post</h1>
+				{/* <h1>First Post</h1> */}
 				<ImageTest />
-				<h2>
+				{/* <h2>
 					<Link href="/">
 						<a>Back to home</a>
 					</Link>
-				</h2>
+				</h2> */}
 				<div>
 					<RollDice />
 				</div>
