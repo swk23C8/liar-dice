@@ -2,16 +2,19 @@ import { useEffect, useState, useRef } from 'react';
 
 export default function RollDice() {
 	const [rollHistory, setrollHistory] = useState([]);
-	const [dice1, setDice1] = useState();
+	const [die1, setDie1] = useState();
+	const [die2, setDie2] = useState();
 
 	const diceRef = useRef(null);
 
 	function rollDice() {
-		setDice1(Math.floor(Math.random() * 6) + 1);
+		setDie1(Math.floor(Math.random() * 6) + 1);
+		setDie2(Math.floor(Math.random() * 6) + 1);
 
-		console.log("rollDice dice 1: ", dice1);
+		console.log("rollDice dice 1: ", die1);
+		console.log("rollDice dice 2: ", die2);
 		console.log("rollDice roll: ", rollHistory);
-		setrollHistory([...rollHistory, dice1]);
+		setrollHistory([...rollHistory, die1]);
 	}
 
 
@@ -25,7 +28,7 @@ export default function RollDice() {
 				<button onClick={rollDice}>Roll</button>
 			</div>
 			<div>
-				<h2>{dice1}</h2>
+				<h2>{die1}</h2>
 			</div>
 		</div>
 
