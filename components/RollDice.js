@@ -95,7 +95,7 @@ export default function RollDice() {
 
 
 	function diceSum(currentDice) {
-		// console.log(currentDice[0])
+		console.log(currentDice[0])
 		for (let i = 0; i < currentDice.length; i++) {
 			if (currentDice[i] === 1) {
 				setDiceCount({
