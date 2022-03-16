@@ -71,15 +71,13 @@ export default function RollDice() {
 				<p style={{'padding-right': '15px'}}>die4: {die4} </p>
 				<p style={{'padding-right': '15px'}}>die5: {die5} </p>
 			</div>
-			<div className="player 2" style={{display: 'flex'}}>
+			<div className="player 3" style={{display: 'flex'}}>
 				<p style={{'padding-right': '15px'}}>die1: {die1} </p>
 				<p style={{'padding-right': '15px'}}>die2: {die2} </p>
 				<p style={{'padding-right': '15px'}}>die3: {die3} </p>
 				<p style={{'padding-right': '15px'}}>die4: {die4} </p>
 				<p style={{'padding-right': '15px'}}>die5: {die5} </p>
 			</div>
-			
 		</div>
-
 	)
 }
