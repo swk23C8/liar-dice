@@ -64,13 +64,21 @@ export default function RollDice() {
 			<div>
 				<button onClick={rollDice}>Roll</button>
 			</div>
-			<div>
-				<p>die 1: {die1} </p>
-				<p>die 2: {die2} </p>
-				<p>die 3: {die3} </p>
-				<p>die 4: {die4} </p>
-				<p>die 5: {die5} </p>
+			<div className="player 1" style={{'display': 'flex'}}>
+				<p style={{'padding-right': '15px'}}>die1: {die1} </p>
+				<p style={{'padding-right': '15px'}}>die2: {die2} </p>
+				<p style={{'padding-right': '15px'}}>die3: {die3} </p>
+				<p style={{'padding-right': '15px'}}>die4: {die4} </p>
+				<p style={{'padding-right': '15px'}}>die5: {die5} </p>
 			</div>
+			<div className="player 2" style={{display: 'flex'}}>
+				<p style={{'padding-right': '15px'}}>die1: {die1} </p>
+				<p style={{'padding-right': '15px'}}>die2: {die2} </p>
+				<p style={{'padding-right': '15px'}}>die3: {die3} </p>
+				<p style={{'padding-right': '15px'}}>die4: {die4} </p>
+				<p style={{'padding-right': '15px'}}>die5: {die5} </p>
+			</div>
+			
 		</div>
 
 	)
