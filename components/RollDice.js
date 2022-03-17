@@ -81,60 +81,62 @@ export default function RollDice() {
 		});
 		diceSum(dice2);
 	}
-	console.log(" ");
+
+	function diceSum(currentDice) {
+		console.log(currentDice)
+		// for loop through currentDice and add to diceCount for each die face
+		for (let i = 0; i < 5; i++) {
+			console.log(currentDice[i])
+			if (currentDice[i] === 1) {
+				setDiceCount({
+					...diceCount,
+					one: diceCount.one++
+				});
+			}
+			if (currentDice[i] === 2) {
+				setDiceCount({
+					...diceCount,
+					two: diceCount.two++
+				});
+			}
+			if (currentDice[i] === 3) {
+				setDiceCount({
+					...diceCount,
+					three: diceCount.three++
+				});
+			}
+			if (currentDice[i] === 4) {
+				setDiceCount({
+					...diceCount,
+					four: diceCount.four++
+				});
+			}
+			if (currentDice[i] === 5) {
+				setDiceCount({
+					...diceCount,
+					five: diceCount.five++
+				});
+			}
+			if (currentDice[i] === 6) {
+				setDiceCount({
+					...diceCount,
+					six: diceCount.six++
+				});
+			}
+		}
+	}
+
 	// console.log(rollHistory1);
 	console.log("player1: " + dice1);
 	// console.log(rollHistory2);
 	console.log("player2: " + dice2);
+	console.log("total dice count: " + (diceCount.one + diceCount.two + diceCount.three + diceCount.four + diceCount.five + diceCount.six));
 	console.log("⚀: " + diceCount.one);
 	console.log("⚁: " + diceCount.two);
 	console.log("⚂: " + diceCount.three);
 	console.log("⚃: " + diceCount.four);
 	console.log("⚄: " + diceCount.five);
 	console.log("⚅: " + diceCount.six);
-
-
-	function diceSum(currentDice) {
-		// console.log(currentDice[0])
-		for (let i = 0; i < currentDice.length; i++) {
-			if (currentDice[i] === 1) {
-				setDiceCount({
-					...diceCount,
-					one: diceCount.one + 1
-				});
-			} else if (currentDice[i] === 2) {
-				setDiceCount({
-					...diceCount,
-					two: diceCount.two + 1
-				});
-			}
-			else if (currentDice[i] === 3) {
-				setDiceCount({
-					...diceCount,
-					three: diceCount.three + 1
-				});
-			}
-			else if (currentDice[i] === 4) {
-				setDiceCount({
-					...diceCount,
-					four: diceCount.four + 1
-				});
-			}
-			else if (currentDice[i] === 5) {
-				setDiceCount({
-					...diceCount,
-					five: diceCount.five + 1
-				});
-			}
-			else if (currentDice[i] === 6) {
-				setDiceCount({
-					...diceCount,
-					six: diceCount.six + 1
-				});
-			}
-		}
-	}
-
 
 	return (
 		<div>
@@ -147,28 +149,29 @@ export default function RollDice() {
 				<button onClick={rollDice2}>Roll2</button>
 			</div>
 			<div className="player_1" style={{ 'display': 'flex' }}>
-				<h3 style={{ 'padding-right': '10px' }}>Player 1</h3>
-				<p style={{ 'padding-right': '15px' }}>die1: {die1_1} </p>
-				<p style={{ 'padding-right': '15px' }}>die2: {die1_2} </p>
-				<p style={{ 'padding-right': '15px' }}>die3: {die1_3} </p>
-				<p style={{ 'padding-right': '15px' }}>die4: {die1_4} </p>
-				<p style={{ 'padding-right': '15px' }}>die5: {die1_5} </p>
+				<h3 style={{ 'paddingRight': '10px' }}>Player 1</h3>
+				<p style={{ 'paddingRight': '15px' }}>🎲: {die1_1} </p>
+				<p style={{ 'paddingRight': '15px' }}>🎲: {die1_2} </p>
+				<p style={{ 'paddingRight': '15px' }}>🎲: {die1_3} </p>
+				<p style={{ 'paddingRight': '15px' }}>🎲: {die1_4} </p>
+				<p style={{ 'paddingRight': '15px' }}>🎲: {die1_5} </p>
 			</div>
 			<div className="player_2" style={{ display: 'flex' }}>
-				<h3 style={{ 'padding-right': '10px' }}>Player 2</h3>
-				<p style={{ 'padding-right': '15px' }}>die1: {die2_1} </p>
-				<p style={{ 'padding-right': '15px' }}>die2: {die2_2} </p>
-				<p style={{ 'padding-right': '15px' }}>die3: {die2_3} </p>
-				<p style={{ 'padding-right': '15px' }}>die4: {die2_4} </p>
-				<p style={{ 'padding-right': '15px' }}>die5: {die2_5} </p>
+				<h3 style={{ 'paddingRight': '10px' }}>Player 2</h3>
+				<p style={{ 'paddingRight': '15px' }}>🎲: {die2_1} </p>
+				<p style={{ 'paddingRight': '15px' }}>🎲: {die2_2} </p>
+				<p style={{ 'paddingRight': '15px' }}>🎲: {die2_3} </p>
+				<p style={{ 'paddingRight': '15px' }}>🎲: {die2_4} </p>
+				<p style={{ 'paddingRight': '15px' }}>🎲: {die2_5} </p>
 			</div>
 			<div className="diceCount" style={{ display: 'flex' }}>
-				<h3 style={{ 'padding-right': '10px' }}>Dice Count</h3>
-				<p style={{ 'padding-right': '15px' }}>die1: {die1_1 + die2_1} </p>
-				<p style={{ 'padding-right': '15px' }}>die2: {die1_2 + die2_2} </p>
-				<p style={{ 'padding-right': '15px' }}>die3: {die1_3 + die2_3} </p>
-				<p style={{ 'padding-right': '15px' }}>die4: {die1_4 + die2_4} </p>
-				<p style={{ 'padding-right': '15px' }}>die5: {die1_5 + die2_5} </p>
+				<h3 style={{ 'paddingRight': '10px' }}>Dice Count</h3>
+				<p style={{ 'paddingRight': '15px' }}>⚀: {diceCount.one} </p>
+				<p style={{ 'paddingRight': '15px' }}>⚁: {diceCount.two} </p>
+				<p style={{ 'paddingRight': '15px' }}>⚂: {diceCount.three} </p>
+				<p style={{ 'paddingRight': '15px' }}>⚃: {diceCount.four} </p>
+				<p style={{ 'paddingRight': '15px' }}>⚄: {diceCount.five} </p>
+				<p style={{ 'paddingRight': '15px' }}>⚅: {diceCount.six} </p>
 			</div>
 		</div>
 	)
