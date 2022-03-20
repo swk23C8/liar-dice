@@ -82,12 +82,12 @@ export default function RollDice() {
 
 	const [player1BetDie, setPlayer1BetDie] = useState({
 		numberOfDice: 0,
-		dieFace: ''
+		dieFace: 0
 	});
 
 	const [player2BetDie, setPlayer2BetDie] = useState({
 		numberOfDice: 0,
-		dieFace: ''
+		dieFace: 0
 	});
 
 
@@ -264,6 +264,32 @@ export default function RollDice() {
 		}
 	}
 
+	// function for setting the bet for each player
+	function insertBet() {
+		if (currentPlayer === 1) {
+			if (player2BetDie.numberOfDice < player1BetDie.numberOfDice) {
+				console.log("bet approved")
+			}
+			else if (player2BetDie.dieFace < player1BetDie.dieFace) {
+				console.log("bet approved")
+			}
+			else {
+				console.log("bet denied")
+			}
+		}
+		if (currentPlayer === 2) {
+			if (player1BetDie.numberOfDice < player2BetDie.numberOfDice) {
+				console.log("bet approved")
+			}
+			else if (player1BetDie.dieFace < player2BetDie.dieFace) {
+				console.log("bet approved")
+			}
+			else {
+				console.log("bet denied")
+			}
+		}
+	}
+
 
 	// console.log(rollHistory1);
 	console.log("player1: " + dice1);
@@ -291,7 +317,7 @@ export default function RollDice() {
 			<div>
 				<button onClick={rollDice1}>Roll1</button>
 				<button onClick={rollDice2}>Roll2</button>
-				<button onClick={resetDice}>Bet</button>
+				<button onClick={insertBet}>Bet</button>
 				<button onClick={resetDice}>Reset</button>
 			</div>
 			<div className="player_1" style={{ 'display': 'flex' }}>
@@ -328,32 +354,32 @@ export default function RollDice() {
 						<h3 style={{ 'paddingRight': '10px' }}>Current Player is 2</h3>
 					</div>
 			}
-			<h1 style={{ 'color': 'brown' }}>PENIS</h1>
+			{/* <h1 style={{ 'color': 'brown' }}>PENIS</h1> */}
 			<div className="Bet" style={{ display: 'flex' }}>
 				<h3 style={{ 'paddingRight': '10px' }}>Bet💰:</h3>
 				<p style={{ 'paddingRight': '15px' }}>{<DieOne />}
-					<button onClick={() => increaseDice(currentPlayer, 'one')}>+</button>
-					<button onClick={() => decreaseDice(currentPlayer, 'one')}>-</button>
+					<button onClick={() => increaseDice(currentPlayer, 1)}>+</button>
+					<button onClick={() => decreaseDice(currentPlayer, 1)}>-</button>
 				</p>
 				<p style={{ 'paddingRight': '15px' }}>{<DieTwo />}
-					<button onClick={() => increaseDice(currentPlayer, 'two')}>+</button>
-					<button onClick={() => decreaseDice(currentPlayer, 'two')}>-</button>
+					<button onClick={() => increaseDice(currentPlayer, 2)}>+</button>
+					<button onClick={() => decreaseDice(currentPlayer, 2)}>-</button>
 				</p>
 				<p style={{ 'paddingRight': '15px' }}>{<DieThree />}
-					<button onClick={() => increaseDice(currentPlayer, 'three')}>+</button>
-					<button onClick={() => decreaseDice(currentPlayer, 'three')}>-</button>
+					<button onClick={() => increaseDice(currentPlayer, 3)}>+</button>
+					<button onClick={() => decreaseDice(currentPlayer, 3)}>-</button>
 				</p>
 				<p style={{ 'paddingRight': '15px' }}>{<DieFour />}
-					<button onClick={() => increaseDice(currentPlayer, 'four')}>+</button>
-					<button onClick={() => decreaseDice(currentPlayer, 'four')}>-</button>
+					<button onClick={() => increaseDice(currentPlayer, 4)}>+</button>
+					<button onClick={() => decreaseDice(currentPlayer, 4)}>-</button>
 				</p>
 				<p style={{ 'paddingRight': '15px' }}>{<DieFive />}
-					<button onClick={() => increaseDice(currentPlayer, 'five')}>+</button>
-					<button onClick={() => decreaseDice(currentPlayer, 'five')}>-</button>
+					<button onClick={() => increaseDice(currentPlayer, 5)}>+</button>
+					<button onClick={() => decreaseDice(currentPlayer, 5)}>-</button>
 				</p>
 				<p style={{ 'paddingRight': '15px' }}>{<DieSix />}
-					<button onClick={() => increaseDice(currentPlayer, 'six')}>+</button>
-					<button onClick={() => decreaseDice(currentPlayer, 'six')}>-</button>
+					<button onClick={() => increaseDice(currentPlayer, 6)}>+</button>
+					<button onClick={() => decreaseDice(currentPlayer, 6)}>-</button>
 				</p>
 			</div>
 		</div>
