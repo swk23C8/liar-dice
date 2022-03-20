@@ -267,25 +267,39 @@ export default function RollDice() {
 	// function for setting the bet for each player
 	function insertBet() {
 		if (currentPlayer === 1) {
-			if (player2BetDie.numberOfDice < player1BetDie.numberOfDice) {
-				console.log("bet approved")
+			if (player2BetDie.numberOfDice <= player1BetDie.numberOfDice) {
+				if (player2BetDie.dieFace <= player1BetDie.dieFace) {
+					console.log("Bet approved")
+				}
+				else {
+					console.log("Bet denied")
+				}
 			}
-			else if (player2BetDie.dieFace < player1BetDie.dieFace) {
-				console.log("bet approved")
-			}
-			else {
-				console.log("bet denied")
+			else if(player2BetDie.dieFace <= player1BetDie.dieFace){
+				if (player2BetDie.numberOfDice <= player1BetDie.numberOfDice) {
+					console.log("Bet approved")
+				}
+				else {
+					console.log("Bet denied")
+				}
 			}
 		}
 		if (currentPlayer === 2) {
-			if (player1BetDie.numberOfDice < player2BetDie.numberOfDice) {
-				console.log("bet approved")
+			if (player1BetDie.numberOfDice <= player2BetDie.numberOfDice) {
+				if (player1BetDie.dieFace <= player2BetDie.dieFace) {
+					console.log("Bet approved")
+				}
+				else {
+					console.log("Bet denied")
+				}
 			}
-			else if (player1BetDie.dieFace < player2BetDie.dieFace) {
-				console.log("bet approved")
-			}
-			else {
-				console.log("bet denied")
+			else if(player1BetDie.dieFace <= player2BetDie.dieFace){
+				if (player1BetDie.numberOfDice <= player2BetDie.numberOfDice) {
+					console.log("Bet approved")
+				}
+				else {
+					console.log("Bet denied")
+				}
 			}
 		}
 	}
@@ -348,10 +362,10 @@ export default function RollDice() {
 			{
 				currentPlayer === 1 ?
 					<div className="player_1" style={{ 'display': 'flex' }}>
-						<h3 style={{ 'paddingRight': '10px' }}>Current Player is 1</h3>
+						<h3 style={{ 'paddingRight': '10px' }}>Current Player is 1: Face={player1BetDie.dieFace} Count={player1BetDie.numberOfDice}</h3>
 					</div> :
 					<div className="player_2" style={{ display: 'flex' }}>
-						<h3 style={{ 'paddingRight': '10px' }}>Current Player is 2</h3>
+						<h3 style={{ 'paddingRight': '10px' }}>Current Player is 2: Face={player2BetDie.dieFace} Count={player2BetDie.numberOfDice}</h3>
 					</div>
 			}
 			{/* <h1 style={{ 'color': 'brown' }}>PENIS</h1> */}
