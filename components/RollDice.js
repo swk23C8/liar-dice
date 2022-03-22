@@ -152,6 +152,7 @@ export default function RollDice() {
 		diceSum(dice2);
 	}
 
+
 	// function for summing up the dice for each player
 	function diceSum(currentDice) {
 		// console.log(currentDice)
